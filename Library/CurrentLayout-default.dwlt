@@ -138,10 +138,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 879, y: 492}
-  m_MaxSize: {x: 16004, y: 14042}
+  m_MinSize: {x: 878, y: 492}
+  m_MaxSize: {x: 16003, y: 14042}
   vertical: 0
-  controlID: 30639
+  controlID: 7972
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 603, y: 492}
   m_MaxSize: {x: 12003, y: 14042}
   vertical: 1
-  controlID: 30640
+  controlID: 7950
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_MinSize: {x: 603, y: 221}
   m_MaxSize: {x: 12003, y: 4021}
   vertical: 0
-  controlID: 30641
+  controlID: 7951
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -448,7 +448,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: dac8f5ffaacaf5ff2ecbf9ff62cbf9ff28ccf9ffc8cdf9fff099fdff049afdff0a23fefff423feffe224feffd225feff1a27feff22fbffff50da0100
+      m_ExpandedIDs: d0f3ffff0cf5ffff5cfbffff8e420000a8420000da420000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -508,9 +508,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.00016769688, y: 0.9941747, z: -0.03953983}
+    m_Target: {x: -0.0743542, y: 1.0964261, z: 0.853537}
     speed: 2
-    m_Value: {x: -0.00016769688, y: 0.9941747, z: -0.03953983}
+    m_Value: {x: -0.0743542, y: 1.0964261, z: 0.853537}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -557,13 +557,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.12557432, y: 0.8744249, z: -0.32794407, w: 0.33480525}
+    m_Target: {x: -0.23562571, y: -0.08591717, z: 0.020893073, w: -0.9678363}
     speed: 2
-    m_Value: {x: 0.12458008, y: 0.87540436, z: -0.32681447, w: 0.33367553}
+    m_Value: {x: -0.23558883, y: -0.087366864, z: 0.02124601, w: -0.9676847}
   m_Size:
-    m_Target: 1.463806
+    m_Target: 2.0364997
     speed: 2
-    m_Value: 1.463806
+    m_Value: 2.0364997
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -652,21 +652,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Animations
+    - Assets/Prefabs/Items
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Animations
+  - Assets/Prefabs/Items
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Robert\Desktop\Vicious
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 126}
-    m_SelectedIDs: 32d10100
-    m_LastClickedID: 119090
-    m_ExpandedIDs: 0000000026b5000000ca9a3b
+    scrollPos: {x: 0, y: 127}
+    m_SelectedIDs: f44a0000
+    m_LastClickedID: 19188
+    m_ExpandedIDs: 00000000144a0000ec4a0000fe4a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -694,7 +694,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000026b5000000ca9a3b
+    m_ExpandedIDs: 00000000144a0000fe4a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

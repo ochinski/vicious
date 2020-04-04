@@ -19,7 +19,9 @@ public class PlayerController : MonoBehaviour
     public GameObject playerRightHand;
     public GameObject weaponSlot;
 
-    public GameObject characterModel; 
+    public GameObject characterModel;
+    public GameObject inventoryUI;
+    public GameObject mainCamera;
 
     [SerializeField] float attackSpeed = 1f;
     [SerializeField] float attackDamage = 1;
@@ -29,14 +31,11 @@ public class PlayerController : MonoBehaviour
 
     private GameObject weapon;
     private AnimController animController;
-
+    
     private List<GameObject> ItemsInRange = new List<GameObject>();
+
     private void Start() {
-
-
-        
         animController = characterModel.GetComponent<AnimController>();
-
         // find a better way to do this
         foreach (Transform child in weaponSlot.transform)
         {
@@ -46,51 +45,65 @@ public class PlayerController : MonoBehaviour
                 break;
             }
         }
-        //
     }
     
 
     void Update()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * x + transform.forward * z;
-
-        // check to see if locomotion animation is active, if yes, no other animations are playing and character can move
-        if (GetAnimationStatus("playerMovement"))
-            controller.SimpleMove(move * speed);
-
-        // check to see if character is not already in an attack animation
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !GetAnimationStatus("attackAnim")) {
-            Attack();
-        }
-
-        // check to see if locomotion animation is active, if yes, only valid time to change inventory
-        if (Input.GetKeyDown(KeyCode.Alpha1) && GetAnimationStatus("playerMovement")) {
-            EquipItem(0);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && GetAnimationStatus("playerMovement")) {
-            EquipItem(1);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && GetAnimationStatus("playerMovement"))
+        // might be a better way of doing this. Doesn't feel right. 
+        if (Input.GetKeyDown(KeyCode.B))
         {
-            EquipItem(2);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4) && GetAnimationStatus("playerMovement"))
-        {
-            EquipItem(3);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha5) && GetAnimationStatus("playerMovement"))
-        {
-            EquipItem(4);
+            mainCamera.GetComponent<MouseLook>().ToggleMouseLook();
         }
 
-        if (Input.GetKeyDown(KeyCode.B) && GetAnimationStatus("playerMovement"))
+        if (!inventoryUI.activeSelf)
         {
-            ToggleInventory();
-        }
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
 
+            Vector3 move = transform.right * x + transform.forward * z;
+            Cursor.visible = false;
+
+            // check to see if locomotion animation is active, if yes, no other animations are playing and character can move
+            if (GetAnimationStatus("playerMovement"))
+            {
+                controller.SimpleMove(move * speed);
+            }
+
+            // check to see if character is not already in an attack animation
+            if (Input.GetKeyDown(KeyCode.Mouse0) && !GetAnimationStatus("attackAnim")) {
+                Attack();
+            }
+
+            // check to see if locomotion animation is active, if yes, only valid time to change inventory
+            if (Input.GetKeyDown(KeyCode.Alpha1) && GetAnimationStatus("playerMovement")) {
+                EquipItem(0);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2) && GetAnimationStatus("playerMovement")) {
+                EquipItem(1);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3) && GetAnimationStatus("playerMovement"))
+            {
+                EquipItem(2);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha4) && GetAnimationStatus("playerMovement"))
+            {
+                EquipItem(3);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha5) && GetAnimationStatus("playerMovement"))
+            {
+                EquipItem(4);
+            }
+
+            if (Input.GetKeyDown(KeyCode.B) && GetAnimationStatus("playerMovement"))
+            {
+                ToggleInventory();
+            }
+        }
+        else
+        {
+            Cursor.visible = true;
+        }
 
         // check to see if locomotion animation is active, if yes, only valid time to loot
         if (Input.GetKeyDown(KeyCode.E) && GetAnimationStatus("playerMovement"))
@@ -115,7 +128,6 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-
 
     private bool GetAnimationStatus(string animation)
     {
@@ -154,7 +166,6 @@ public class PlayerController : MonoBehaviour
         itemInSlot.transform.localEulerAngles = weapon.GetComponent<WeaponPosition>().pickRotation;
 
         weapon.GetComponent<WeaponController>().SetTotalDamage(attackDamage);
-
         
         // to be changed to use a item type component
         SetAttackSpeed(weapon.GetComponent<WeaponController>().GetWeaponSpeed());

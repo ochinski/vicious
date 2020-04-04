@@ -27,6 +27,7 @@ public class Inventory : MonoBehaviour
     public int space = 20;
     public List<Item> items = new List<Item>();
 
+    public Transform playerLocation;
     public bool Add(Item item)
     {
         bool flag = false;
@@ -47,6 +48,7 @@ public class Inventory : MonoBehaviour
 
     public void Remove(Item item)
     {
+        Instantiate(item.gameItem, playerLocation.transform.position, Quaternion.identity);
         items.Remove(item);
 
         if (onItemChangedCallback != null)
