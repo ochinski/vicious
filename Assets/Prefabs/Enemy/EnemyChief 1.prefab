@@ -166,10 +166,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'Shoulder_R'\n\tTransform 'Shoulder_R'\n\tFrom
-    animation clip 'New Animation'"
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -3000,7 +2997,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6184142159075556329}
   - component: {fileID: 6184142159075556342}
-  - component: {fileID: 6184142159075556343}
   - component: {fileID: 6184142159075556340}
   - component: {fileID: 6184142159075556328}
   - component: {fileID: 8543991153058759980}
@@ -3045,24 +3041,8 @@ MonoBehaviour:
   healthbarUI: {fileID: 6184142158434847530}
   healthBar: {fileID: 6184142159727850994}
   characterModel: {fileID: 6184142157621265617}
---- !u!143 &6184142159075556343
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6184142159075556341}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.37
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
+  loot:
+  - {fileID: 8102591352480448942, guid: e4a7402a1a4008344a423eae28701184, type: 3}
 --- !u!114 &6184142159075556340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3087,7 +3067,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 6184142159075556341}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.21
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -3096,7 +3076,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 1.9
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -3110,7 +3090,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.37
+  m_Radius: 0.25
   m_Height: 1.93
   m_Direction: 1
   m_Center: {x: 0, y: 0.94, z: 0}
@@ -3129,7 +3109,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!1 &6184142159091418359
 GameObject:
   m_ObjectHideFlags: 0

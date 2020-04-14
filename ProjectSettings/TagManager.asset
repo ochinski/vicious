@@ -10,6 +10,7 @@ TagManager:
   - AttackPoint
   - tree
   - playerRightHand
+  - projectileSpawnPoint
   layers:
   - Default
   - TransparentFX

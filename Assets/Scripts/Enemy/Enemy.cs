@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     public Canvas healthbarUI;
     public Image healthBar;
     public GameObject characterModel;
+    public GameObject[] loot;
 
     private float currentHealth;
     private GameObject player;
@@ -74,6 +75,12 @@ public class Enemy : MonoBehaviour
         characterModel.GetComponent<Animator>().enabled = false;
         GetComponent<Rigidbody>().AddForce(direction);
         healthbarUI.enabled = false;
+        GameObject itemDrop =  Instantiate(loot[0], transform.position, Quaternion.identity);
+        Rigidbody rb_itemDrop = itemDrop.GetComponent<Rigidbody>();
+        if (rb_itemDrop)
+        {
+            rb_itemDrop.AddForce(direction);
+        }
     }
 
 
